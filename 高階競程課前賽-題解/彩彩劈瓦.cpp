@@ -2,18 +2,18 @@
 #include<algorithm>
 using namespace std;
 
-#define ll long long
+#define ll long long int
 ll dp[3333][3333],a[3333],n,L;
 
-ll calc(ll now,ll p){
+ll calc(int now,ll p){
   if(now>=n||dp[now][p])
   return dp[now][p];
   //since a[] begins from a[0]
   ll dif=p-a[now];
   if(dif>0)
-  return dp[now][p]=max(calc(now+1,p+min(L,p+a[now])),a[now]+calc(now+1,dif));
+  return dp[now][p]=max(calc(now+1,min(L,a[now]+p)),a[now]+calc(now+1,dif));
   else
-  return dp[now][p]=max(calc(now+1,p+min(L,p+a[now])),p+calc(now+1,0));
+  return dp[now][p]=max(calc(now+1,min(L,a[now]+p)),p+calc(now+1,0));
 }
 
 
