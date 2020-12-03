@@ -1,47 +1,46 @@
 #include <iostream>
 #include <algorithm>
+
 using namespace std;
-//using ll=long long int;
-int const maxn=3e3+10,maxL=3e3+10;
-int const INF=0x7fffffff;
-int dp[maxn][maxL],a[maxn],n,L;
 
-int main(){
-  cout<< "Enter n and L respectively:";
-  scanf("%d %d",&n,&L);
-  cout<< "Enter a[i] one by one:";
-  for(int i=0;i<n;++i)
-  scanf("%d",&a[i]);
+const int maxn=3e3+10,maxl=3e3+10;
+const int inf=0x7fffffff;
 
-  for(int i=0;i<n;++i){
-    for(int p=0;p<=L;++p){
-    dp[i][p]=-INF;
-    dp[0][min(L,a[0])]=0;
+int a[maxn],dp[maxn][maxn],day,P;
+
+
+int main(){ 
+  cout << "Enter n and L respectively:" ;
+  scanf("%d %d",&day,&P);
+  cout << "Enter a[i] one by one:";
+  for(int i=0;i<day;++i)
+    scanf("%d",&a[i]);
+
+  for(int i=0;i<day;++i)
+    for(int j=0;j<=P;++j)
+      dp[i][j]=-inf;
+  
+  //first day
+  dp[0][min(P,a[0])]=0;
+
+  for(int i=1;i<day;++i)
+    for(int p=P;p>=0;--p){
+      auto g=min(p,a[i]);
+      //do it
+      if(p-g>=0)  //tomorrow
+        dp[i][p-g]=max(dp[i-1][p]+g,dp[i][p-g]);
+      //don't do
+      if(p+a[i]<=P)  //tomorrow
+        dp[i][p+a[i]]=max(dp[i-1][p],dp[i][p+a[i]]);
+      else
+        dp[i][P]=max(dp[i-1][p],dp[i][P]);
     }
-  }
 
-  for(int i=1;i<n;++i){
-    for(int p=L;p>=0;--p){
-      int x=min(a[i],p);
-      if(p-x>=0){
-        dp[i][p-x]=max(dp[i][p-x],dp[i-1][p]+x);
-      }
-      if(p+a[i]<=L){
-        dp[i][p+a[i]]=max(dp[i][p+a[i]],dp[i-1][p]);
-      }
-      else{
-        dp[i][L]=max(dp[i][L],dp[i-1][p]);
-      }
-    }
-  }
+    int res=0;
+    for(int i=0;i<=P;++i)
+      res=max(res,dp[day-1][i]);
 
-  int ans=0;
-  for(int p=0;p<=L;++p){
-    ans=max(ans,dp[n-1][p]);
-  }
-
-  printf("%d \n",ans);
+    cout << "answer is :" << res;
 
   return 0;
 }
-
