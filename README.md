@@ -1,6 +1,6 @@
 # Competition
 
-## 2020高階競程課前賽
+## Contest #0
 
 No. | Title | Related Topics | Solution | Note
 ---|---|---|---|---|
