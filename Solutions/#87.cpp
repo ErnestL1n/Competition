@@ -17,6 +17,7 @@ int foo(){
     }
 }
 
+
 int main(){
     int t;
     cin >> t;
