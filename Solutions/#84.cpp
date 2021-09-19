@@ -1,13 +1,8 @@
 # include <bits/stdc++.h>
 using namespace std;
 
-int main(){
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    int t;
-    cin >> t;
-    for(int i=0;i<t;++i){
-        int n,m;
+void foo(){
+    int n,m;
         cin >> n >> m;
         vector<vector<int>> mat(n,vector<int>(m));
         for(auto& a:mat)
@@ -22,7 +17,7 @@ int main(){
                     --cnt;
                 if(mat[i][j]>cnt){
                     cout << "NO" << "\n";
-                    return 0;
+                    return;
                 }else{
                     mat[i][j]=cnt;
                 }
@@ -33,6 +28,14 @@ int main(){
                 cout << b <<" ";
             cout << "\n";
         }
-    }
+}
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int t;
+    cin >> t;
+    while(t--)
+        foo();
     return 0;
 }
