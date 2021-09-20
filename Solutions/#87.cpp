@@ -16,8 +16,6 @@ int foo(){
         return N*(a+b);
     }
 }
-
-
 int main(){
     int t;
     cin >> t;
