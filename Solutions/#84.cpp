@@ -22,7 +22,7 @@ void foo(){
                     mat[i][j]=cnt;
                 }
             }
-        cout << "Yes" << "\n";
+        cout << "YES" << "\n";
         for(auto& a:mat){
             for(auto& b:a)
                 cout << b <<" ";
