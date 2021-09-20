@@ -13,7 +13,7 @@ int foo(){
                 ++cnt;
         return a*N+(cnt/2+1)*b;
     }else{
-        return N*(a+b);
+        return a*N+b*N;
     }
 }
 int main(){
