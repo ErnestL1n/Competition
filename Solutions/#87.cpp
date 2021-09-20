@@ -1,6 +1,6 @@
 # include <bits/stdc++.h>
 using namespace std;
-#test
+
 int foo(){
     int N,a,b;
     string s;
