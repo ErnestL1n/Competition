@@ -122,6 +122,7 @@ struct VEC<T, 1> : public vector<T> {
 void foo() {
   ll n;
   cin >> n;
+  cout << n * (n - 1) + 2;
 }
 
 int main() {
@@ -129,9 +130,9 @@ int main() {
   cin.tie(0);
   cout.tie(0);
 
-  ll t;
+  ll t = 1;
 
-  cin >> t;
+  // cin >> t;
   while (t--) {
     foo();
   }
