@@ -122,7 +122,7 @@ struct VEC<T, 1> : public vector<T> {
 void foo() {
   ll n;
   cin >> n;
-  cout << n * (n - 1) + 2;
+  cout << n * (n - 1) + 2 << "\n";
 }
 
 int main() {
