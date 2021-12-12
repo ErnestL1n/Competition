@@ -1,7 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define pb push_back
-#define rep(i, n) for (int i = 0; i < n; ++i)
+#define rep(i,l,r) for (int i = l; i < r; ++i)
+#define repe(i,l,r) for (int i = l; i <= r; ++i)
+#define repde(i,r,l) for (int i = r; i >= l; --i)
+#define repall(v,a) for (const auto& v:a)
+// #define rep(i, n) for (ll i = 0; i < n; ++i)
 typedef long long ll;
 template <int MOD>
 struct Fp {
@@ -87,11 +91,11 @@ using mint = Fp<MOD>;
 // cout << dp[n] << "\n";
 
 template <typename T, int D>
-struct VEC : public vector<VEC<T, D-1>> {
+struct VEC : public vector<VEC<T, D - 1>> {
   static_assert(D >= 1, "Vector dimension must be greater than zero!");
   template <typename... Args>
   VEC(int n = 0, Args... args)
-      : vector<VEC<T, D-1>>(n, VEC<T, D-1>(args...)) {}
+      : vector<VEC<T, D - 1>>(n, VEC<T, D - 1>(args...)) {}
 };
 template <typename T>
 struct VEC<T, 1> : public vector<T> {
@@ -118,24 +122,56 @@ struct VEC<T, 1> : public vector<T> {
 // VEC<string, 1> e;
 // ---------------------------------------
 
+// ---------------------------------------------------
+//
+// ⣠⡶⠚⠛⠲⢄⡀
+// ⣼⠁ 　　　⠳⢤⣄
+// ⢿⠀⢧⡀⠀⠀⠀⠀⠀⢈⡇
+// ⠈⠳⣼⡙⠒⠶⠶⠖⠚⠉⠳⣄
+// ⠀⠀⠈⣇⠀⠀⠀⠀⠀⠀⠀ ⠈⠳⣄
+// ⠀ ⠀ ⠘⣆ ⠀⠀  　 ⠈⠓⢦⣀
+// ⠀⠀⠀⠀⠈⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢤
+// ⠀⠀⠀⠀⠀⠀⠙⢦⣄⠀⠀⠀⠀  ⠀⠀⠀⠀⠈⢧
+// ⠀⠀⠀⠀⠀⠀⠀⡴⠋⠓⠦⣤⡀⠀⠀⠀⠀⠀⠀⠀⠈⣇
+// ⠀⠀⠀⠀⠀⠀⣸⠁
+//
+// ---------------------------------------------------
+
 void foo() {
-  ll n;
-  cin >> n;
+  
 }
 
 int main() {
-
-  ios_base::sync_with_stdio(0);
+  ios::sync_with_stdio(0);
   cin.tie(0);
   cout.tie(0);
 
-  ll t;
-  // ll t=1;
-  cin >> t;
+  bool multitestcases=true;
+  int t;
+
+  if (multitestcases) {
+    cin >> t;
+  } else {
+    t = 1;
+  }
 
   while (t--) {
     foo();
   }
-
   return 0;
 }
+
+// ---------------------------------------------------
+//
+// ⣠⡶⠚⠛⠲⢄⡀
+// ⣼⠁ 　　　⠳⢤⣄
+// ⢿⠀⢧⡀⠀⠀⠀⠀⠀⢈⡇
+// ⠈⠳⣼⡙⠒⠶⠶⠖⠚⠉⠳⣄
+// ⠀⠀⠈⣇⠀⠀⠀⠀⠀⠀⠀ ⠈⠳⣄
+// ⠀ ⠀ ⠘⣆ ⠀⠀  　 ⠈⠓⢦⣀
+// ⠀⠀⠀⠀⠈⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢤
+// ⠀⠀⠀⠀⠀⠀⠙⢦⣄⠀⠀⠀⠀  ⠀⠀⠀⠀⠈⢧
+// ⠀⠀⠀⠀⠀⠀⠀⡴⠋⠓⠦⣤⡀⠀⠀⠀⠀⠀⠀⠀⠈⣇
+// ⠀⠀⠀⠀⠀⠀⣸⠁
+//
+// ---------------------------------------------------
