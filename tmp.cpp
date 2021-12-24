@@ -6,6 +6,10 @@ using namespace std;
 #define repde(i,r,l) for (int i = r; i >= l; --i)
 #define repall(v,a) for (const auto& v:a)
 // #define rep(i, n) for (ll i = 0; i < n; ++i)
+#define maxint INT_MAX
+#define maxll std::numeric_limits<long long int>::max()
+#define minint INT_MIN
+#define minll std::numeric_limits<long long int>::min()
 typedef long long ll;
 template <int MOD>
 struct Fp {
